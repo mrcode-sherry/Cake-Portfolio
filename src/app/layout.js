@@ -1,3 +1,6 @@
+import Footer from '../components/Footer.jsx';
+import FooterBar from '../components/FooterBar.jsx';
+import Navbar from '../components/Navbar.jsx';
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -22,7 +25,10 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <Navbar />
+       {children}
+       <Footer />
+      <FooterBar />
       </body>
     </html>
   );
