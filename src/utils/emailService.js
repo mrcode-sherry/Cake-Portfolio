@@ -1,10 +1,16 @@
 import emailjs from '@emailjs/browser';
 
-const serviceId = 'YOUR_SERVICE_ID';
-const templateId = 'YOUR_TEMPLATE_ID';
-const publicKey = 'YOUR_PUBLIC_KEY';
+// Use environment variables for security
+const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
 export const sendContactForm = async (formData) => {
+    // Check if environment variables are set
+    if (!serviceId || !templateId || !publicKey) {
+        throw new Error('EmailJS environment variables are not set');
+    }
+    
     try {
         const response = await emailjs.send(
             serviceId,
@@ -20,6 +26,11 @@ export const sendContactForm = async (formData) => {
 };
 
 export const sendOrderForm = async (formData) => {
+    // Check if environment variables are set
+    if (!serviceId || !templateId || !publicKey) {
+        throw new Error('EmailJS environment variables are not set');
+    }
+    
     try {
         const response = await emailjs.send(
             serviceId,
