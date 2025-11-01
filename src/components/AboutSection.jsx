@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const AboutSection = () => {
   return (
-    <section className="py-16">
+    <section className="py-16 bg-white">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         <div>
           <h2 className="text-3xl font-bold mb-4" style={{ color: 'var(--primary)' }}>About Us</h2>

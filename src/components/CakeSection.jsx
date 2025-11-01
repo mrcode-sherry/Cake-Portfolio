@@ -6,7 +6,7 @@ const CakeSection = () => {
   const displayedCakes = cakeData.slice(0, 3); // Display only the first 3 cakes
 
   return (
-    <section className="py-16">
+    <section className="py-16 bg-white">
       <div className="container mx-auto">
         <h2 className="text-3xl font-bold text-center mb-8" style={{ color: 'var(--primary)' }}>
           Our Cakes
